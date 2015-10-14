@@ -40,9 +40,12 @@ NSMutableDictionary* ImageDIC;
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"Image"];
     //查询整个表
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        BmobObject *bobj =  nil;
+        NSString *path;
+        NSString* type;
         for (BmobObject *obj in array) {
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
-            NSString *path;
+           
             //获取图片路径
             BmobFile*  dic = [obj objectForKey:@"image"];
             path = [dic url];
@@ -52,29 +55,36 @@ NSMutableDictionary* ImageDIC;
             }
             
             //查看服务器是否有更新
-            NSString* type = [obj objectForKey:@"type"];
+            type = [obj objectForKey:@"type"];
             NSInteger i1 = [[[ImageDIC valueForKey:type] valueForKey:@"图片编号"] intValue];//本地的编号
             NSInteger i2 = [[obj objectForKey:@"number"] intValue];//数据库的编号
             if ( i1 < i2) {
-    
-                //服务器有更新开始获取和保存图片
-                [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[[NSURL alloc]initWithString:path] options:SDWebImageDownloaderLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                    //        NSLog(@"%ld %ld",(long)receivedSize,(long)expectedSize);
-                } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                    if(error){
-                        NSLog(@"保存失败");return;
-                    }
-                    else{
-//                        //保存成功
-                        NSDictionary *dic = @{@"图片编号":@(i2),@"图片地址":path};
-                        [ImageDIC setValue:dic forKey:[obj objectForKey:@"type"]];
-                        [self writeImageDIC];
-                        [data writeToFile:[self pathtype:type] atomically:YES];
+                bobj = obj;
 
-                    }
-                }];
             }
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+        }
+        
+        if(bobj){
+            //服务器有更新开始获取和保存图片
+             NSLog(@"%@开始成功",type);
+            [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[[NSURL alloc]initWithString:path] options:SDWebImageDownloaderLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                //        NSLog(@"%ld %ld",(long)receivedSize,(long)expectedSize);
+            } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                if(error){
+                    NSLog(@"保存失败");return;
+                }
+                else{
+                    //                        //保存成功
+                    NSDictionary *dic = @{@"图片编号":[bobj objectForKey:@"number"],@"图片地址":path};
+                    NSLog(@"%@更新成功",type);
+                    [ImageDIC setValue:dic forKey:[bobj objectForKey:@"type"]];
+                    [self writeImageDIC];
+                    [data writeToFile:[self pathtype:type] atomically:YES];
+                    
+                }
+                
+            }];
         }
     }];
 

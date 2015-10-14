@@ -23,13 +23,19 @@
     //获取已经成功登录过的账号
     NSMutableArray* userArr = [UserInfo Users];
     NSLog(@"%@",userArr);
-    NSMutableDictionary* dic = userArr[0];
-    //同步输入框
-    _usernameTF.text = [dic valueForKey:@"用户名"];
-    _passwordTF.text = [dic valueForKey:@"密码"];
+    NSMutableDictionary* dic;
+    if(userArr.count > 0){
+        dic = userArr[0];
+        
+        //同步输入框
+        _usernameTF.text = [dic valueForKey:@"用户名"];
+        _passwordTF.text = [dic valueForKey:@"密码"];
+    }
+    
     //如果没有账号离线登录按钮不能点
     
     //如果是自动登录
+    bl = NO;//这个是应该有的，，，，
     if (bl) {
         //验证第一个账号的密码账号
  
