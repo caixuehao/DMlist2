@@ -54,6 +54,7 @@
 		7CA9232B1BCD1263001DBD75 /* FZlistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA923291BCD1263001DBD75 /* FZlistVC.m */; settings = {ASSET_TAGS = (); }; };
 		7CA9232C1BCD1263001DBD75 /* FZlistVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CA9232A1BCD1263001DBD75 /* FZlistVC.xib */; settings = {ASSET_TAGS = (); }; };
 		D7FA63641BCDE4A30047F1F7 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63631BCDE4A30047F1F7 /* UIView+Frame.m */; settings = {ASSET_TAGS = (); }; };
+		D7FA63691BCDE7D80047F1F7 /* ESBmob.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63681BCDE7D80047F1F7 /* ESBmob.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		D7FA63621BCDE4A30047F1F7 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		D7FA63631BCDE4A30047F1F7 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		D7FA63661BCDE69A0047F1F7 /* PrefixHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.h; sourceTree = "<group>"; };
+		D7FA63671BCDE7D80047F1F7 /* ESBmob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESBmob.h; sourceTree = "<group>"; };
+		D7FA63681BCDE7D80047F1F7 /* ESBmob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESBmob.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				7C7A842A1BCBC5850083BFA0 /* BmobSDK.framework */,
+				D7FA63671BCDE7D80047F1F7 /* ESBmob.h */,
+				D7FA63681BCDE7D80047F1F7 /* ESBmob.m */,
 			);
 			name = Bmob;
 			path = "../第三方/Bmob";
@@ -590,6 +595,7 @@
 				7C7A846C1BCBCA240083BFA0 /* SDWebImageDownloaderOperation.m in Sources */,
 				7C7A84701BCBCA240083BFA0 /* UIImage+GIF.m in Sources */,
 				7C7A84691BCBCA240083BFA0 /* SDWebImageCompat.m in Sources */,
+				D7FA63691BCDE7D80047F1F7 /* ESBmob.m in Sources */,
 				7C7A84671BCBCA240083BFA0 /* NSData+ImageContentType.m in Sources */,
 				7C7A83E21BCBA8040083BFA0 /* main.m in Sources */,
 				7C7A84661BCBCA240083BFA0 /* MKAnnotationView+WebCache.m in Sources */,

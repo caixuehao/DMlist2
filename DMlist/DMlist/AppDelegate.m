@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "QiDongVC.h"
-#import <BmobSDK/Bmob.h>
+
 @interface AppDelegate ()
 
 @end
@@ -18,14 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //初始化Bmob
-    NSString *appKey = @"e2938113697d0d2495270daaa232058e";//申请的Application ID
-    [Bmob registerWithAppKey:appKey];
     
-    //启动图
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[QiDongVC alloc]init];
+//    //启动图
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    [self.window makeKeyAndVisible];
+//    self.window.rootViewController = [[QiDongVC alloc]init];
 
     
     return YES;

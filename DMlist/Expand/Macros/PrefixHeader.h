@@ -10,7 +10,10 @@
 #define PrefixHeader_h
 
 
+/** 第三方库、框架 */
+#import <BmobSDK/Bmob.h>
 
+/** 拓展分类 */
 #import "UIView+Frame.h"
 
 
