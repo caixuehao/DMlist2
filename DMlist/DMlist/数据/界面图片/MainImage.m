@@ -43,6 +43,8 @@ NSMutableDictionary* ImageDIC;
         BmobObject *bobj =  nil;
         NSString *path;
         NSString* type;
+        NSInteger i1 = [[[ImageDIC valueForKey:type] valueForKey:@"图片编号"] intValue];//本地的编号
+
         for (BmobObject *obj in array) {
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
            
@@ -56,11 +58,10 @@ NSMutableDictionary* ImageDIC;
             
             //查看服务器是否有更新
             type = [obj objectForKey:@"type"];
-            NSInteger i1 = [[[ImageDIC valueForKey:type] valueForKey:@"图片编号"] intValue];//本地的编号
             NSInteger i2 = [[obj objectForKey:@"number"] intValue];//数据库的编号
             if ( i1 < i2) {
                 bobj = obj;
-
+                i1 = i2;
             }
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
         }
