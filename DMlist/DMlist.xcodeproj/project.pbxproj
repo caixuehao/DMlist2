@@ -21,6 +21,7 @@
 		7C7A843F1BCBC6920083BFA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7A843E1BCBC6920083BFA0 /* CoreGraphics.framework */; };
 		7C7A84411BCBC69A0083BFA0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7A84401BCBC69A0083BFA0 /* Security.framework */; };
 		7C7A84431BCBC6A40083BFA0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C7A84421BCBC6A40083BFA0 /* CoreLocation.framework */; };
+		7CA30BA31BCE07DF00B58D0A /* DMlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA30BA21BCE07DF00B58D0A /* DMlist.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63771BCDEB160047F1F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA636D1BCDEB160047F1F7 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63781BCDEB160047F1F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7FA636E1BCDEB160047F1F7 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		D7FA63791BCDEB160047F1F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7FA636F1BCDEB160047F1F7 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -55,7 +56,6 @@
 		D7FA63CF1BCDEC9F0047F1F7 /* 项目描述.txt in Resources */ = {isa = PBXBuildFile; fileRef = D7FA63C91BCDEC9F0047F1F7 /* 项目描述.txt */; settings = {ASSET_TAGS = (); }; };
 		D7FA63DC1BCDF5320047F1F7 /* FZlistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63D31BCDF5320047F1F7 /* FZlistVC.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63DD1BCDF5320047F1F7 /* FZlistVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FA63D41BCDF5320047F1F7 /* FZlistVC.xib */; settings = {ASSET_TAGS = (); }; };
-		D7FA63DE1BCDF5320047F1F7 /* QiDongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63D71BCDF5320047F1F7 /* QiDongVC.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63DF1BCDF5320047F1F7 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63DA1BCDF5320047F1F7 /* LoginVC.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63E01BCDF5320047F1F7 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FA63DB1BCDF5320047F1F7 /* LoginVC.xib */; settings = {ASSET_TAGS = (); }; };
 		D7FA63E41BCDF5AB0047F1F7 /* ESStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63E31BCDF5AB0047F1F7 /* ESStartView.m */; settings = {ASSET_TAGS = (); }; };
@@ -99,6 +99,8 @@
 		7C7A843E1BCBC6920083BFA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7C7A84401BCBC69A0083BFA0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7C7A84421BCBC6A40083BFA0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7CA30BA11BCE07DF00B58D0A /* DMlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMlist.h; sourceTree = "<group>"; };
+		7CA30BA21BCE07DF00B58D0A /* DMlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMlist.m; sourceTree = "<group>"; };
 		D7FA636C1BCDEB160047F1F7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D7FA636D1BCDEB160047F1F7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D7FA636E1BCDEB160047F1F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,8 +160,6 @@
 		D7FA63D21BCDF5320047F1F7 /* FZlistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZlistVC.h; sourceTree = "<group>"; };
 		D7FA63D31BCDF5320047F1F7 /* FZlistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZlistVC.m; sourceTree = "<group>"; };
 		D7FA63D41BCDF5320047F1F7 /* FZlistVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FZlistVC.xib; sourceTree = "<group>"; };
-		D7FA63D61BCDF5320047F1F7 /* QiDongVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QiDongVC.h; sourceTree = "<group>"; };
-		D7FA63D71BCDF5320047F1F7 /* QiDongVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QiDongVC.m; sourceTree = "<group>"; };
 		D7FA63D91BCDF5320047F1F7 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		D7FA63DA1BCDF5320047F1F7 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		D7FA63DB1BCDF5320047F1F7 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 		7C7A83DF1BCBA8040083BFA0 /* DMlist */ = {
 			isa = PBXGroup;
 			children = (
-				D7FA63D01BCDF5320047F1F7 /* 界面 */,
+				D7FA63D01BCDF5320047F1F7 /* 测试界面 */,
 				D7FA63BF1BCDEC9F0047F1F7 /* 数据 */,
 				D7FA637E1BCDEBD20047F1F7 /* 第三方 */,
 				D7FA63A51BCDEBD20047F1F7 /* Expand */,
@@ -276,6 +276,15 @@
 				7C7A842C1BCBC62B0083BFA0 /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7CA30BA01BCE07DF00B58D0A /* 动漫信息 */ = {
+			isa = PBXGroup;
+			children = (
+				7CA30BA11BCE07DF00B58D0A /* DMlist.h */,
+				7CA30BA21BCE07DF00B58D0A /* DMlist.m */,
+			);
+			path = "动漫信息";
 			sourceTree = "<group>";
 		};
 		D7FA636B1BCDEB160047F1F7 /* Main */ = {
@@ -391,6 +400,7 @@
 		D7FA63BF1BCDEC9F0047F1F7 /* 数据 */ = {
 			isa = PBXGroup;
 			children = (
+				7CA30BA01BCE07DF00B58D0A /* 动漫信息 */,
 				D7FA63C01BCDEC9F0047F1F7 /* 用户信息 */,
 				D7FA63C31BCDEC9F0047F1F7 /* 界面图片 */,
 				D7FA63C81BCDEC9F0047F1F7 /* 草稿.numbers */,
@@ -419,13 +429,13 @@
 			path = "界面图片";
 			sourceTree = "<group>";
 		};
-		D7FA63D01BCDF5320047F1F7 /* 界面 */ = {
+		D7FA63D01BCDF5320047F1F7 /* 测试界面 */ = {
 			isa = PBXGroup;
 			children = (
 				D7FA63D11BCDF5320047F1F7 /* 分组显示界面 */,
-				D7FA63D51BCDF5320047F1F7 /* 启动界面 */,
 				D7FA63D81BCDF5320047F1F7 /* 登录界面 */,
 			);
+			name = "测试界面";
 			path = "界面";
 			sourceTree = "<group>";
 		};
@@ -437,15 +447,6 @@
 				D7FA63D41BCDF5320047F1F7 /* FZlistVC.xib */,
 			);
 			path = "分组显示界面";
-			sourceTree = "<group>";
-		};
-		D7FA63D51BCDF5320047F1F7 /* 启动界面 */ = {
-			isa = PBXGroup;
-			children = (
-				D7FA63D61BCDF5320047F1F7 /* QiDongVC.h */,
-				D7FA63D71BCDF5320047F1F7 /* QiDongVC.m */,
-			);
-			path = "启动界面";
 			sourceTree = "<group>";
 		};
 		D7FA63D81BCDF5320047F1F7 /* 登录界面 */ = {
@@ -625,6 +626,7 @@
 				D7FA63CB1BCDEC9F0047F1F7 /* MainImage.m in Sources */,
 				D7FA63AE1BCDEBD20047F1F7 /* MKAnnotationView+WebCache.m in Sources */,
 				D7FA63DC1BCDF5320047F1F7 /* FZlistVC.m in Sources */,
+				7CA30BA31BCE07DF00B58D0A /* DMlist.m in Sources */,
 				D7FA63B11BCDEBD20047F1F7 /* SDWebImageCompat.m in Sources */,
 				D7FA63B61BCDEBD20047F1F7 /* SDWebImagePrefetcher.m in Sources */,
 				D7FA63BD1BCDEBD20047F1F7 /* UIView+WebCacheOperation.m in Sources */,
@@ -636,7 +638,6 @@
 				D7FA63BE1BCDEBD20047F1F7 /* UIView+Frame.m in Sources */,
 				D7FA63B01BCDEBD20047F1F7 /* SDImageCache.m in Sources */,
 				D7FA637C1BCDEB160047F1F7 /* main.m in Sources */,
-				D7FA63DE1BCDF5320047F1F7 /* QiDongVC.m in Sources */,
 				D7FA63771BCDEB160047F1F7 /* AppDelegate.m in Sources */,
 				D7FA63B81BCDEBD20047F1F7 /* UIImage+GIF.m in Sources */,
 				D7FA63AF1BCDEBD20047F1F7 /* NSData+ImageContentType.m in Sources */,

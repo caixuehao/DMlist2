@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "QiDongVC.h"
+#import "LoginVC.h"
 
 
 #import "ESStartView.h"
@@ -22,10 +22,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    //启动图
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    [self.window makeKeyAndVisible];
-//    self.window.rootViewController = [[QiDongVC alloc]init];
+    //登录
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    self.window.rootViewController = [[LoginVC alloc]init];
     
     
     [ESStartView show];

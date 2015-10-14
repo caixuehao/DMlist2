@@ -8,7 +8,7 @@
 
 #import "ESStartView.h"
 #import "AppDelegate.h"
-
+#import "MainImage.h"
 @implementation ESStartView
 
 /*
@@ -36,6 +36,7 @@
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.bounds];
         imageView.image = [UIImage imageNamed:@"saber"];
+        [MainImage setImageView:imageView IamgeType:@"启动图"];//cai--
         imageView.alpha = 0.0;
         [self addSubview:imageView];
         
