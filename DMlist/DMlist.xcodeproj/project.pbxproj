@@ -58,6 +58,8 @@
 		D7FA63DE1BCDF5320047F1F7 /* QiDongVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63D71BCDF5320047F1F7 /* QiDongVC.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63DF1BCDF5320047F1F7 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63DA1BCDF5320047F1F7 /* LoginVC.m */; settings = {ASSET_TAGS = (); }; };
 		D7FA63E01BCDF5320047F1F7 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7FA63DB1BCDF5320047F1F7 /* LoginVC.xib */; settings = {ASSET_TAGS = (); }; };
+		D7FA63E41BCDF5AB0047F1F7 /* ESStartView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63E31BCDF5AB0047F1F7 /* ESStartView.m */; settings = {ASSET_TAGS = (); }; };
+		D7FA63E81BCDF6A80047F1F7 /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = D7FA63E71BCDF6A80047F1F7 /* GCD.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,10 @@
 		D7FA63D91BCDF5320047F1F7 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		D7FA63DA1BCDF5320047F1F7 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		D7FA63DB1BCDF5320047F1F7 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		D7FA63E21BCDF5AB0047F1F7 /* ESStartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESStartView.h; sourceTree = "<group>"; };
+		D7FA63E31BCDF5AB0047F1F7 /* ESStartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESStartView.m; sourceTree = "<group>"; };
+		D7FA63E61BCDF6A80047F1F7 /* GCD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		D7FA63E71BCDF6A80047F1F7 /* GCD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +356,7 @@
 		D7FA63A51BCDEBD20047F1F7 /* Expand */ = {
 			isa = PBXGroup;
 			children = (
+				D7FA63E51BCDF69A0047F1F7 /* Tool */,
 				D7FA63A61BCDEBD20047F1F7 /* Category */,
 				D7FA63A91BCDEBD20047F1F7 /* Macros */,
 			);
@@ -376,6 +383,7 @@
 		D7FA63AB1BCDEBD20047F1F7 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D7FA63E11BCDF59B0047F1F7 /* StartView */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -448,6 +456,24 @@
 				D7FA63DB1BCDF5320047F1F7 /* LoginVC.xib */,
 			);
 			path = "登录界面";
+			sourceTree = "<group>";
+		};
+		D7FA63E11BCDF59B0047F1F7 /* StartView */ = {
+			isa = PBXGroup;
+			children = (
+				D7FA63E21BCDF5AB0047F1F7 /* ESStartView.h */,
+				D7FA63E31BCDF5AB0047F1F7 /* ESStartView.m */,
+			);
+			path = StartView;
+			sourceTree = "<group>";
+		};
+		D7FA63E51BCDF69A0047F1F7 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				D7FA63E61BCDF6A80047F1F7 /* GCD.h */,
+				D7FA63E71BCDF6A80047F1F7 /* GCD.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -589,6 +615,7 @@
 			files = (
 				D7FA63BB1BCDEBD20047F1F7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D7FA63B21BCDEBD20047F1F7 /* SDWebImageDecoder.m in Sources */,
+				D7FA63E81BCDF6A80047F1F7 /* GCD.m in Sources */,
 				D7FA63BC1BCDEBD20047F1F7 /* UIImageView+WebCache.m in Sources */,
 				D7FA63CA1BCDEC9F0047F1F7 /* UserInfo.m in Sources */,
 				D7FA63AD1BCDEBD20047F1F7 /* ESBmob.m in Sources */,
@@ -604,6 +631,7 @@
 				D7FA63DF1BCDF5320047F1F7 /* LoginVC.m in Sources */,
 				D7FA63B91BCDEBD20047F1F7 /* UIImage+MultiFormat.m in Sources */,
 				D7FA637D1BCDEB160047F1F7 /* ViewController.m in Sources */,
+				D7FA63E41BCDF5AB0047F1F7 /* ESStartView.m in Sources */,
 				D7FA63B71BCDEBD20047F1F7 /* UIButton+WebCache.m in Sources */,
 				D7FA63BE1BCDEBD20047F1F7 /* UIView+Frame.m in Sources */,
 				D7FA63B01BCDEBD20047F1F7 /* SDImageCache.m in Sources */,
@@ -755,7 +783,7 @@
 					"\"$(SRCROOT)/../第三方/Bmob\"",
 					"$(PROJECT_DIR)/DMlist/第三方/Bmob",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Expand/Macros/PrefixHeader.h";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DMlist/Expand/Macros/PrefixHeader.h";
 				INFOPLIST_FILE = DMlist/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
@@ -772,7 +800,7 @@
 					"\"$(SRCROOT)/../第三方/Bmob\"",
 					"$(PROJECT_DIR)/DMlist/第三方/Bmob",
 				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Expand/Macros/PrefixHeader.h";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DMlist/Expand/Macros/PrefixHeader.h";
 				INFOPLIST_FILE = DMlist/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";

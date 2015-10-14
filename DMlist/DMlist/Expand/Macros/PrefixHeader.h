@@ -17,4 +17,8 @@
 #import "UIView+Frame.h"
 
 
+/** 工具类 */
+#import "GCD.h"
+
+
 #endif /* PrefixHeader_h */
