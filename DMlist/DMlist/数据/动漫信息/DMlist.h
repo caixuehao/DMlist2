@@ -27,7 +27,7 @@
         名字:，
         标识符(属于的分组):，
         备注:，
-        动漫封面:，
+        封面网址:，
 //      封面文件:，
         ID
     },
@@ -64,7 +64,17 @@
 /**
  *增加元素［名字，备注，标识符，图片网址，是否是分组,成功后调用，失败调用］
  */
-
 +(void)addF_name:(NSString*)name remark:(NSString*)remark type:(NSInteger)type titleImageUrl:(NSString*)titleImageUrl FZ:(NSInteger)fz Success:(void(^)())sucess Fail:(void(^)(NSInteger i))fail;
-
+/**
+ *获取本地封面网址缓存
+ */
++(NSString*)getImageCache:(NSString*)ciTiao;
+/**
+ *添加本地网址缓存
+ */
++(void)addImageCache:(NSString*)url  CiTiao:(NSString *)ciTiao;
+/**
+ *修改本地图片网址缓存
+ */
++(void)setImageCache:(NSString*)url CiTioa:(NSString *)ciTiao;
 @end

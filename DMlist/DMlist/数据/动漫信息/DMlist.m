@@ -14,6 +14,7 @@
 NSMutableArray *ARR;
 sqlite3* db;
 
+
 @implementation DMlist
 +(void)GetFZList:(void (^)(NSMutableArray *))sucess{
     if (ARR == nil) {
@@ -354,8 +355,18 @@ sqlite3* db;
         sqlite3_prepare_v2(db, [sqlCreateTable UTF8String], -1, &statement, nil);
         NSLog(@"%d",error);
         if (sqlite3_step(statement) != SQLITE_DONE){
-            NSLog(@"表创建失败");
+            NSLog(@"主表创建失败");
         }
+        
+        //词条 图片网址
+        NSString *sqlCreateTable2 = @"CREATE TABLE IF NOT EXISTS H2 (CiTiao TEXT PRIMARY KEY,ImageURL TEXT)";
+        error =
+        sqlite3_prepare_v2(db, [sqlCreateTable2 UTF8String], -1, &statement, nil);
+        NSLog(@"%d",error);
+        if (sqlite3_step(statement) != SQLITE_DONE){
+            NSLog(@"缓存表创建失败");
+        }
+        
     }
 }
 //读数据
@@ -443,4 +454,55 @@ sqlite3* db;
     }
 }
 
+
+//============================图片缓存表操作==================================
++(NSString*)getImageCache:(NSString *)ciTiao{
+    NSString* imageurl = @"";
+    NSString *sql = [[NSString alloc] initWithFormat:@"SELECT * FROM H2 WHERE  CiTiao = '%@'",ciTiao];
+    sqlite3_stmt *statement;
+    int error =sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil);
+    
+    if (error == SQLITE_OK) {
+        while (sqlite3_step(statement) == SQLITE_ROW) {
+            
+            char *name = (char *)sqlite3_column_text(statement, 1);
+            imageurl = [[NSString alloc] initWithUTF8String:name];
+            return imageurl;
+        }
+        sqlite3_finalize(statement);
+        
+    }else{
+//        NSLog(@"分组查询失败");
+    }
+    return imageurl;
+}
++(void)addImageCache:(NSString *)url CiTiao:(NSString *)ciTiao{
+    NSString *sql = [[NSString alloc] initWithFormat:@"insert into H2 values('%@','%@')",ciTiao,url];
+    //添加
+    sqlite3_stmt *statement;
+    //    int error =
+    sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil);
+    //    NSLog(@"%d",error);
+    if (sqlite3_step(statement) == SQLITE_DONE){
+       //成功
+    }else{
+        //失败
+    }
+
+}
+
++(void)setImageCache:(NSString *)url CiTioa:(NSString *)ciTiao{
+    NSString *sql = [[NSString alloc] initWithFormat:@"UPDATE H2 SET ImageURL = '%@' WHERE CiTiao ='%@'",url,ciTiao];
+    //添加
+    sqlite3_stmt *statement;
+    //    int error =
+    sqlite3_prepare_v2(db, [sql UTF8String], -1, &statement, nil);
+    //    NSLog(@"%d",error);
+    if (sqlite3_step(statement) == SQLITE_DONE){
+        //成功
+    }else{
+        //失败
+    }
+
+}
 @end

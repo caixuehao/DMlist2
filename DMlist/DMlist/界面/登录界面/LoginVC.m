@@ -9,6 +9,8 @@
 #import "LoginVC.h"
 #import "UserInfo.h"
 #import "FZlistVC.h"
+#import "DMlist.h"
+
 @interface LoginVC ()
 
 @end
@@ -18,34 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    //先判断是否自动登录
-    BOOL bl = [UserInfo autologin];
+     [self.navigationController setNavigationBarHidden:YES animated:NO]; //隐藏导航栏
+    
     //获取已经成功登录过的账号
     NSMutableArray* userArr = [UserInfo Users];
-    NSLog(@"%@",userArr);
+//    NSLog(@"%@",userArr);
     NSMutableDictionary* dic;
+    
     if(userArr.count > 0){
         dic = userArr[0];
-        
         //同步输入框
         _usernameTF.text = [dic valueForKey:@"用户名"];
         _passwordTF.text = [dic valueForKey:@"密码"];
     }
     
     //如果没有账号离线登录按钮不能点
-    
-    //如果是自动登录
-    bl = NO;//这个是应该有的，，，，
-    if (bl) {
-        //验证第一个账号的密码账号
- 
-        [UserInfo LoginUsername:[dic valueForKey:@"用户名"] Password:[dic valueForKey:@"密码"] Success:^{
-            NSLog(@"登录成功");
-            self.view.window.rootViewController = [[FZlistVC alloc] init];
-        } Fail:^(int i) {
-            NSLog(@"登录失败");//0 == 没有这个账号  1 == 密码错误
-        }];
-    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,7 +45,16 @@
 - (IBAction)登录:(id)sender {
     [UserInfo LoginUsername:_usernameTF.text Password:_passwordTF.text Success:^{
         NSLog(@"登录成功");
-        self.view.window.rootViewController = [[FZlistVC alloc] init];
+        
+        FZlistVC* fvc = (FZlistVC*)self.navigationController.viewControllers[0];
+        [DMlist GetFZList:^(NSMutableArray *arr) {
+           fvc.FZARR = arr;
+           [fvc.MainCollectionView reloadData];
+        }];
+        
+        [self.navigationController setNavigationBarHidden:NO animated:NO]; //显示导航栏
+        [self.navigationController popViewControllerAnimated:NO];
+        
     } Fail:^(int i) {
         NSLog(@"登录失败");//0 == 没有这个账号  1 == 密码错误
     }];

@@ -7,8 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginVC.h"
-
+//#import "LoginVC.h"
+#import "FZlistVC.h"
 
 #import "ESStartView.h"
 
@@ -25,8 +25,9 @@
     //登录
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window makeKeyAndVisible];
-    self.window.rootViewController = [[LoginVC alloc]init];
     
+    FZlistVC* fzvc = [[FZlistVC alloc]init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:fzvc];
     
     [ESStartView show];
     
