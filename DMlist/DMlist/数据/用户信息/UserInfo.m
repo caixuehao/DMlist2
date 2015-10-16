@@ -82,11 +82,13 @@ UserInfo* userInfo;
         
         if (array.count == 0) {
         //登录失败
+             [Users_DIC setValue:@"" forKey:@"默认账号"];
             fail(0);return;//没有该账号
         }
         BmobObject* obj = array[0];
         if ([password isEqualToString:[obj objectForKey:@"password"]] == NO) {
             //登录失败
+             [Users_DIC setValue:@"" forKey:@"默认账号"];
             fail(1);return;//密码错误
         }
 //        if ([[obj objectForKey:@"loginMode"] intValue] == 1) {
