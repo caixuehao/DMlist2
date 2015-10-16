@@ -63,11 +63,12 @@ type        string  图片类型
 username.db
 name            string 动漫的名字
 remark          string 备注
-type            string 动漫类型（分组）对应分组表的ID
+type            number 动漫类型（分组）对应分组表的ID
 titleImageUrl   string 动漫封面图片的网址
-titleImageFile  File   封面图片文件
-FZ              number 是否是分组 0 第一级分组1
-
+//titleImageFile  File   封面图片文件
+FZ              number 是否是分组 0元素 第一级分组1
+//createdAt       NSdate 创建时间
+//updateAt        NSdate 修改时间
 
 Image.plist
 图片类型：{

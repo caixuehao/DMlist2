@@ -35,5 +35,165 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x6570;&#x636e;/&#x52a8;&#x6f2b;&#x4fe1;&#x606f;/DMlist.m"
+            timestampString = "466602356.303817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "+ReadDB"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x6570;&#x636e;/&#x52a8;&#x6f2b;&#x4fe1;&#x606f;/DMlist.m"
+            timestampString = "466602356.303817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "370"
+            endingLineNumber = "370"
+            landmarkName = "+ReadData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x6570;&#x636e;/&#x52a8;&#x6f2b;&#x4fe1;&#x606f;/DMlist.m"
+            timestampString = "466602356.303817"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
+            landmarkName = "+ReadDB"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x754c;&#x9762;/&#x5206;&#x7ec4;&#x663e;&#x793a;&#x754c;&#x9762;/FZlistVC.m"
+            timestampString = "466602615.472969"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__23-[FZlistVC viewDidLoad]_block_invoke"
+                  moduleName = "&#x52a8;&#x6f2b;&#x5217;&#x8868;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duole/Documents/ioslx/DMlist2/DMlist/DMlist/%E7%95%8C%E9%9D%A2/%E5%88%86%E7%BB%84%E6%98%BE%E7%A4%BA%E7%95%8C%E9%9D%A2/FZlistVC.m"
+                  timestampString = "466602623.972163"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "100">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__23-[FZlistVC viewDidLoad]_block_invoke"
+                  moduleName = "&#x52a8;&#x6f2b;&#x5217;&#x8868;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/duole/Documents/ioslx/DMlist2/DMlist/DMlist/%E7%95%8C%E9%9D%A2/%E5%88%86%E7%BB%84%E6%98%BE%E7%A4%BA%E7%95%8C%E9%9D%A2/FZlistVC.m"
+                  timestampString = "466602623.972426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "120">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x754c;&#x9762;/&#x5206;&#x7ec4;&#x663e;&#x793a;&#x754c;&#x9762;/FZlistVC.m"
+            timestampString = "466602650.727547"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x754c;&#x9762;/&#x5206;&#x7ec4;&#x663e;&#x793a;&#x754c;&#x9762;/FZlistVC.m"
+            timestampString = "466602759.81043"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-btn1:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x6570;&#x636e;/&#x52a8;&#x6f2b;&#x4fe1;&#x606f;/DMlist.m"
+            timestampString = "466602976.631744"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "+updata:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DMlist/&#x6570;&#x636e;/&#x52a8;&#x6f2b;&#x4fe1;&#x606f;/DMlist.m"
+            timestampString = "466603228.150713"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "+addF:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

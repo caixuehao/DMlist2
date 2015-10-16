@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FZlistVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *tf1;
 
 @end

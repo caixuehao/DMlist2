@@ -17,11 +17,23 @@ UserInfo* userInfo;
 +(UserInfo*)share{
     if (userInfo == nil) {
         userInfo = [[UserInfo alloc] init];
+        
         userInfo.username = @"";
-        [userInfo setLoginOut:YES];
+        userInfo.time = nil;
+        userInfo.loginOut = YES;
+
     }
     return userInfo;
 }
++(BOOL)setLastTime:(NSDate *)date{
+    [UserInfo share].time = date;
+    [Users_ARR[0] setValue:date forKey:@"上一次更新时间"];
+    [UserInfo writeUsersDIC];
+    return YES;
+}
+
+
+
 +(NSMutableArray*)Users{
     if (Users_DIC == nil) {
         [self readUsersDIC];
@@ -81,14 +93,20 @@ UserInfo* userInfo;
 //            //登录失败（暂不考虑）
 //            fail(2);return;//有人在线了
 //        }
+        
         //登录成功
         [Users_DIC setValue:username forKey:@"默认账号"];
+        [UserInfo share].time = [obj createdAt];
         //把以前的账号删除
         for (int i = 0;  i < Users_ARR.count; i++) {
             NSString* str = [Users_ARR[i] valueForKey:@"用户名"];
             if ([str isEqualToString:username]) {
                 //如果相等
                 NSMutableDictionary* dic = Users_ARR[i];
+//                if ([Users_ARR[i] valueForKey:@"上一次更新时间"] == nil) {
+//                     [Users_ARR[i] setValue:[obj createdAt] forKey:@"上一次更新时间"];
+//                }
+                [UserInfo share].time = [Users_ARR[i] valueForKey:@"上一次更新时间"];
                 [Users_ARR removeObject:dic];
             }
         }
@@ -96,7 +114,8 @@ UserInfo* userInfo;
         NSDictionary* dic = @{@"用户名":username,
                               @"密码":password,
                               @"昵称":[obj objectForKey:@"nickname"],
-                              @"用户类型":[obj objectForKey:@"userType"]
+                              @"用户类型":[obj objectForKey:@"userType"],
+                              @"上一次更新时间":[UserInfo share].time
                               };
         [Users_ARR insertObject:[[NSMutableDictionary alloc] initWithDictionary:dic] atIndex:0];
         //本地化
@@ -104,6 +123,7 @@ UserInfo* userInfo;
         //同步数据
         [UserInfo share].loginOut = NO;
         [UserInfo share].username = username;
+        
         sucess();
     }];
     
