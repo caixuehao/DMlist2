@@ -78,7 +78,7 @@
 
 
 
-+(void*)getImageArr:(void(^)(NSString* imageArr))Huidiao CiTiao:(NSString*)ciTiao{
++(void*)getImageArr:(void(^)(NSString* imageURL))Huidiao CiTiao:(NSString*)ciTiao{
 //    NSLog(@"词条：%@",ciTiao);
     //判断本地是否已经有封面
 //    NSMutableDictionary* Dic =  [[BaiDu GetFanWangZhiDIC] objectForKey:ciTiao];
@@ -114,11 +114,11 @@
                      if ([[str2 substringFromIndex:str2.length-3] isEqualToString:@"gif"]) {return;}
 //                     NSLog(@"imageURL:%@",str2);
                      
-                     NSString* nowimage = [DMlist getImageCache:ciTiao];
-                     //排除当前封面
-                     if ([str2 isEqualToString:nowimage]) {
-                         return;
-                     }
+//                     NSString* nowimage = [DMlist getImageCache:ciTiao];
+//                     //排除当前封面
+//                     if ([str2 isEqualToString:nowimage]) {
+//                         return;
+//                     }
             
                      [imageArr addObject:str2];
                      Huidiao(str2);

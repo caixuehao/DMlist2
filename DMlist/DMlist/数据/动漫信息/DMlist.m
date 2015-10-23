@@ -17,7 +17,7 @@ sqlite3* db;
 
 @implementation DMlist
 +(void)GetFZList:(void (^)(NSMutableArray *))sucess{
-    if (ARR == nil) {
+//    if (ARR == nil) {
         //先从本地读（顺便把数据库创建一下）
         [DMlist ReadDB];
         //同步网络数据
@@ -25,11 +25,14 @@ sqlite3* db;
             [DMlist updata:sucess];
             return;
         }
-        
-    }
+      
+//    }
 
         [DMlist ReadData];
         sucess(ARR);
+}
++(NSMutableArray*)Get_DMlistArr{
+    return ARR;
 }
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 //正常删除
@@ -53,8 +56,8 @@ sqlite3* db;
             //删除成功后的动作
             NSLog(@"%@,删除成功",ID);
             //刷新数据（可优化）
-            [DMlist ReadData];
             [DMlist removeF:obj];
+            [DMlist ReadData];
             //刷新更新时间[两个人登一个号容易导致数据不同步]
             [UserInfo setLastTime:[NSDate date]];
             
@@ -99,9 +102,14 @@ sqlite3* db;
     //先看看分组里面有无元素
     for (int i = 0;  i < ARR.count; i++) {
         if ([ID isEqualToString:[ARR[i] valueForKey:@"ID"]]) {
-            NSLog(@"%@删除失败（该分组里还有元素）",ID);
-            if(fail)fail(-1);//删除失败，该分组里还有元素
-            return;
+            NSMutableArray *arr = [ARR[i] valueForKey:@"元素数组"];
+            if(arr.count>1){
+                NSLog(@"%@删除失败（该分组里还有元素）",ID);
+                if(fail)fail(-1);//删除失败，该分组里还有元素
+                return;
+            }else{
+                break;
+            }
         }
     }
     //然后走流程
@@ -145,7 +153,7 @@ sqlite3* db;
             
         } else if (error){
             //发生错误后的动作
-             NSLog(@"%@ 添加失败（服务器中有重复）",name);
+             NSLog(@"%@:",[error.userInfo valueForKey:@"error"]);
             if(fail!=nil)fail(error.code);//401 有重复
         } else {
             NSLog(@"%@ 添加失败（未知错误）",name);
@@ -157,7 +165,7 @@ sqlite3* db;
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 //修改
 //88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
-+(void)setF_oldname:(NSString *)ID Name:(NSString *)name remark:(NSString *)remark type:(NSInteger)type titleImageUrl:(NSString *)titleImageUrl Success:(void (^)())sucess Fail:(void (^)(NSInteger))fail{
++(void)setF_ID:(NSString *)ID Name:(NSString *)name remark:(NSString *)remark type:(NSInteger)type titleImageUrl:(NSString *)titleImageUrl Success:(void (^)())sucess Fail:(void (^)(NSInteger))fail{
     
     if([UserInfo share].loginOut){
         NSLog(@"离线模式不能添加");
@@ -181,6 +189,7 @@ sqlite3* db;
     
     [obj updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
         if (isSuccessful) {
+             NSLog(@"%@ 修改成功",ID);
             //修改成功后的动作
             [DMlist setF:obj];
             //刷新数据（可优化）
@@ -302,7 +311,7 @@ sqlite3* db;
         NSDictionary *condiction1 = @{@"updatedAt":@{@"$gte":@{@"__type": @"Date", @"iso": currentDateStr}}};
         [bquery addTheConstraintByAndOperationWithArray:@[condiction1]];
     }
-    
+    bquery.limit = 1000;//查询最大数量
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         for (BmobObject *obj in array) {
             NSDate *  date= [[obj createdAt] laterDate:[UserInfo share].time];
@@ -371,8 +380,12 @@ sqlite3* db;
 }
 //读数据
 +(void)ReadData{
-    
-     ARR = [[NSMutableArray alloc] init];
+    if (ARR == nil) {
+          ARR = [[NSMutableArray alloc] init];
+    }
+    else{
+        [ARR removeAllObjects];
+    }
     
     //先查数组查询
     NSString *sql = @"SELECT * FROM H WHERE FZ = '1'";
@@ -400,7 +413,7 @@ sqlite3* db;
             NSMutableDictionary* dic = [[NSMutableDictionary alloc]initWithDictionary:
                                         @{
                                           @"分组名":nameStr,
-                                          @"备注:":remarkStr,
+                                          @"备注":remarkStr,
                                           @"标识符":typeStr,
                                           @"封面网址":titleImageUrlStr,
                                           @"ID":IDStr
@@ -439,8 +452,8 @@ sqlite3* db;
                 NSMutableDictionary* dic = [[NSMutableDictionary alloc]initWithDictionary:
                                             @{
                                               @"名字":nameStr,
-                                              @"备注:":remarkStr,
-                                              @"标识符":@([typeStr intValue]),
+                                              @"备注":remarkStr,
+                                              @"标识符":typeStr,
                                               @"封面网址":titleImageUrlStr,
                                               @"ID":IDStr
                                               }];

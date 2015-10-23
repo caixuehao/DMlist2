@@ -3,6 +3,28 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "qdvc">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DMDetailVC initWithData:]:DMDetailVC.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[DMDetailVC viewDidLoad]:DMDetailVC.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_remarkTV.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[DMlist addF:]:DMlist.m">
+      </ContextState>
+      <ContextState
          contextName = "-[AppDelegate application:didFinishLaunchingWithOptions:]:AppDelegate.m">
          <PersistentStrings>
             <PersistentString
@@ -20,17 +42,6 @@
       </ContextState>
       <ContextState
          contextName = "__17+[DMlist updata:]_block_invoke:DMlist.m">
-      </ContextState>
-      <ContextState
-         contextName = "+[DMlist addF:]:DMlist.m">
-      </ContextState>
-      <ContextState
-         contextName = "__57-[AppDelegate application:didFinishLaunchingWithOptions:]_block_invoke:AppDelegate.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "qdvc">
-            </PersistentString>
-         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

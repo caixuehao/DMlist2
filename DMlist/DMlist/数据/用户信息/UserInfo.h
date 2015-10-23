@@ -10,8 +10,10 @@
 
 @interface UserInfo : NSObject
 @property(nonatomic,strong)NSString* username;//当前登录成功的用户名
+@property(nonatomic,strong)NSString* nickname;//当前登录成功的昵称
 @property(nonatomic,assign)BOOL loginOut;//YES离线登录  NO正常登录
 @property(nonatomic,strong)NSDate* time;//上一次更新时间
+
 /**
  *返回已经通过验证的用户数组(第一个是默认账号［或者叫上一次成功登录的账号］)
  */

@@ -21,7 +21,7 @@
  */
 +(BOOL)setFenMian:(UIImageView*)imageView CiTiao:(NSString*)ciTiao;
 
-+(void*)getImageArr:(void(^)(NSString* imageArr))Huidiao CiTiao:(NSString*)ciTiao;
++(void*)getImageArr:(void(^)(NSString* imageURL))Huidiao CiTiao:(NSString*)ciTiao;
 
 
 

@@ -40,18 +40,25 @@
 
 @interface DMlist : NSObject
 /**
- *获取动漫分组信息
+ *获取动漫分组信息(会重新读取)
  */
 +(void)GetFZList:(void(^)(NSMutableArray* arr)) sucess;
 /**
+ *获取动漫分组信息（直接获取本地的）
+ */
++(NSMutableArray*)Get_DMlistArr;
+
+
+
+/**
  *修改分组(动漫)信息[对应元素的ID，新名字(可填nil)，新备注(可填nil)，新标识符，新图片网址(可填nil),成功后调用，失败调用];
  */
-+(void)setF_oldname:(NSString*)ID Name:(NSString*)name remark:(NSString*)remark type:(NSInteger)type titleImageUrl:(NSString*)titleImageUrl Success:(void(^)())sucess Fail:(void(^)(NSInteger i))fail;
++(void)setF_ID:(NSString*)ID Name:(NSString*)name remark:(NSString*)remark type:(NSInteger)type titleImageUrl:(NSString*)titleImageUrl Success:(void(^)())sucess Fail:(void(^)(NSInteger i))fail;
 
 /**
  *上传图片[图片，对应元素的名字]
  */
-+(BOOL)UploadImageFile:(UIImage*)image name:(NSString*)name;
+//+(BOOL)UploadImageFile:(UIImage*)image name:(NSString*)name;
 
 /**
  *删除动漫[对应元素的ID,成功后调用，失败调用]
@@ -65,6 +72,11 @@
  *增加元素［名字，备注，标识符，图片网址，是否是分组,成功后调用，失败调用］
  */
 +(void)addF_name:(NSString*)name remark:(NSString*)remark type:(NSInteger)type titleImageUrl:(NSString*)titleImageUrl FZ:(NSInteger)fz Success:(void(^)())sucess Fail:(void(^)(NSInteger i))fail;
+
+
+
+
+
 /**
  *获取本地封面网址缓存
  */

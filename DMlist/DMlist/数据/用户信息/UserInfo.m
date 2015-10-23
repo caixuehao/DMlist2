@@ -125,6 +125,7 @@ UserInfo* userInfo;
         //同步数据
         [UserInfo share].loginOut = NO;
         [UserInfo share].username = username;
+        [UserInfo share].nickname = [obj objectForKey:@"nickname"];
         
         sucess();
     }];

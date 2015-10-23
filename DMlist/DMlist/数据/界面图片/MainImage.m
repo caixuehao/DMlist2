@@ -20,6 +20,8 @@ NSMutableDictionary* ImageDIC;
     //第一次进入时从本地读一遍
     if(ImageDIC == nil){
         [MainImage readImageDIC];
+        //同步数据
+        [self updata];
     }
 
     NSDictionary* dic = [ImageDIC valueForKey:type];
@@ -32,8 +34,6 @@ NSMutableDictionary* ImageDIC;
 //         [iv sd_setImageWithURL:[self pathtype:type] placeholderImage:iv.image];
         iv.image = [UIImage imageNamed:[self pathtype:type]];
     }
-    //同步数据
-    [self updata];
 }
 //同步数据
 +(void)updata{
